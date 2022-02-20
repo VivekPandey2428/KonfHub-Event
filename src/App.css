@@ -1,38 +1,242 @@
-.App {
+.Search-Input{
+  width:40%;
+  height:100px;
+  background:white;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  margin-left:30%;
+  display: flex;
+  justify-content: space-around;
+  gap:20px;
+  padding-top:20px;
+  position: relative;
+  top:-100px;
+}
+.Search-bar p{
+  margin:0;
+}
+.Search-bar{
+  position: relative;
+}
+.cursive{
+  font-family: cursive;
+}
+.Search-bar input{
+  height:35px;
+  width:300px;
+}
+.Search-bar button{
+  position: absolute;
+  background:purple;
+  border-radius: 50%;
+  right:15px;
+  top:32px;
+  cursor: pointer;
+
+}
+.Past-events p{
+  margin:0;
+}
+.Past-events select{
+  padding:10px;
+  width:6rem;
+}
+.Card{
+  height:auto;
+  width:20%;
+  border:1px solid black;
+  margin-left:20px;
+}
+.card-image{
+  width:100%;
+  height:15rem;
+
+}
+.card-image img{
+  width: 100%;
+  height: 100%;
+}
+.event-head{
+  padding-left:10px;
+  padding-top:20px;
+}
+.desc{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px 10px;
+}
+.flex-desc{
+  display: flex;
+}
+.card-desc{
+  margin-bottom:20px; 
+}
+.Card-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap:3%;
+  row-gap: 40px;
+}
+.Collection{
+  margin-bottom:40px;
+}
+.container-desc{
+  background:#E5E5E5;
+  display: flex;
+  height:auto;
+  justify-content: space-between;
+  align-items: center;
+  margin:30px;
+  border-radius: 30px;
+  padding-bottom:100px;
+}
+.head-desc{
+  margin: 50px;
+}
+.img-desc{
+  margin:30px 40px;
+}
+.img-desc img{
+  margin-top:30px;
+  height:400px;
+  width: 300px;
+}
+.Elements{
+  margin-top:-100px;
+}
+.Elements h2{
+  margin-left:20px;
+}
+.load-button{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.load{
+  padding: 15px;
+  margin-top:20px;
+  border:none;
+  cursor: pointer;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 1200px) {
+  /* For mobile phones: */
+  .Search-Input{
+    width:80%;
+    margin:10%;
+  }
+  .Card{
+    width:30%;
+  }
+  .Card-flex{
+    column-gap: 0.1%;
+  }
+  .card-desc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .event-head{
+    width:80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 800px) {
+  /* For mobile phones: */
+  .container-desc{
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .Search-Input{
+    width:80%;
+    margin:10%;
+  }
+  .Card{
+    width:45%;
+  }
+  .Card-flex{
+    column-gap: 2%;
+  }
+  .card-desc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .event-head{
+    width:80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* For mobile phones: */
+  .container-desc{
+    flex-direction: column;
+  }
+  .Search-Input{
+    width:95%;
+    margin:5%;
+  }
+  .Card{
+    width:65%;
+    margin-left:17.5%;
+  }
+  .Card-flex{
+    column-gap: 2%;
+  }
+  .card-desc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .event-head{
+    width:80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 500px) {
+  /* For mobile phones: */
+  .container-desc{
+    flex-direction: column;
+  }
+  .Search-Input{
+    width:100%;
+    margin:0;
+    flex-direction: column;
+    justify-content: flex-start;
+    height:auto;
+  }
+  .Search-Input input{
+    width: 95%;
+    margin:0 2.4%;
+  }
+  .Search-Input p{
+    margin-left:10px;
+  }
+  .Search-Input select{
+    width: 95%;
+    margin:20px 2.4%;
+  }
+  .Card{
+    width:65%;
+    margin-left:17.5%;
+  }
+  .desc{
+    flex-direction: column;
+    justify-content:start;
+  }
+  .Card-flex{
+    column-gap: 2%;
+  }
+  .card-desc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .event-head{
+    width:80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .container img{
+    width: 100%;
+    height:auto;
   }
 }
