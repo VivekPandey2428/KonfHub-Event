@@ -59,6 +59,12 @@
 .event-head{
   padding-left:10px;
   padding-top:20px;
+  
+}
+.event-head{
+  width:80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .desc{
   display: flex;
@@ -83,9 +89,10 @@
 .Collection{
   margin-bottom:40px;
 }
+
 .container-desc{
-  background:#E5E5E5;
   display: flex;
+  background:#FFDBA6;
   height:auto;
   justify-content: space-between;
   align-items: center;
@@ -95,6 +102,11 @@
 }
 .head-desc{
   margin: 50px;
+}
+.head-desc h2{
+  font-family:comforter;
+  font-size:4rem;
+  letter-spacing: 4px;
 }
 .img-desc{
   margin:30px 40px;
@@ -108,10 +120,20 @@
   margin-top:-100px;
 }
 .Elements h2{
+  font-size: 3rem;
   margin-left:20px;
 }
 .load-button{
   text-align: center;
+}
+.container{
+  width: 100%;
+  height:auto;
+}
+.Logo-org{
+  width:100%;
+  height:50px;
+
 }
 .load{
   padding: 15px;
@@ -216,15 +238,15 @@
     margin:20px 2.4%;
   }
   .Card{
-    width:65%;
-    margin-left:17.5%;
+    width:70%;
+    margin-left:10.5%;
   }
   .desc{
     flex-direction: column;
     justify-content:start;
   }
   .Card-flex{
-    column-gap: 2%;
+    column-gap: 0%;
   }
   .card-desc{
     overflow: hidden;
@@ -235,8 +257,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .container img{
-    width: 100%;
-    height:auto;
+  .container-desc{
+    width:100%;
+    margin:0;
   }
 }

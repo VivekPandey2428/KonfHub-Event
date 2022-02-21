@@ -7,7 +7,7 @@ export  function Data(){
     const [cnt,setcnt]=useState(10);
     const [searchText,setSearchText]=useState('');
     const [clickedval,setClickedval]=useState(false);
-    const [dropDownValue,setDropDownValue]=useState('Default');
+    const [dropDownValue,setDropDownValue]=useState(true);
     function handleChange(event){
         setSearchText(event.target.value);
     }
@@ -16,24 +16,22 @@ export  function Data(){
         setClickedval(true);
     }
     function handleDropDownChange(event){
-        setDropDownValue(event.target.value);
+        setDropDownValue(prev=>{
+            if(event.target.value==="False"){
+                setDropDownValue(false);
+            }
+            else{
+                setDropDownValue(true);
+            }
+        });
     }
     async function getVal(){
         try {
+            console.log(dropDownValue);
             const res = await axios.get(
-              `${BaseUrl}?limit=${cnt}`
+              `${BaseUrl}?search_query=${searchText}&past_events=${dropDownValue}&limit=${cnt}`
             );
             setVal(res.data.events);
-            if(dropDownValue==="True"){
-                setVal(res.data.events.filter(data=>{
-                    return data.is_past;
-                }))
-            }
-            if(dropDownValue==="False"){
-                setVal(res.data.events.filter(data=>{
-                    return !(data.is_past);
-                }))
-            }
             return res;
           } catch (err) {
             console.log(err);
@@ -41,10 +39,11 @@ export  function Data(){
     }
     useEffect(()=>{
         getVal();
-    },[cnt,dropDownValue])
+    },[cnt,dropDownValue,searchText])
     function LoadMore(){
-        setcnt(prev=>prev+=12)
+        setcnt(prev=>prev+12);
     }
+    console.log(val);
         return(
             <div className="Collection">
              <div className="Search-Input">
@@ -57,8 +56,7 @@ export  function Data(){
                  </div>
                  <div className="Past-events">
                      <p>Past Events</p>
-                     <select value={dropDownValue} onChange={handleDropDownChange} className="dropdown">
-                         <option value="Default">Default</option>
+                     <select  onChange={handleDropDownChange} className="dropdown">
                          <option value="True">True</option>
                          <option value="False">False</option>
                      </select>
@@ -68,15 +66,7 @@ export  function Data(){
                 <h2 className="cursive">Events</h2>
                 <div className="Card-flex">
                 {
-                  val.filter((data)=>{
-                      if(!clickedval || searchText===''){
-                          return data;
-                      }
-                      else if(clickedval && data.name.toLowerCase().includes(searchText.toLowerCase())){
-                          return data;
-                      }
-                  })
-                  .map((data)=>{
+                  val.map((data)=>{
                       return(
                           <Card key={data.event_id} {...data}/>
                       )

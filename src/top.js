@@ -1,10 +1,10 @@
 import React from "react";
-import BgIcon from "./images/bg-icon.png"
+import BgIcon from "./images/events.svg"
 
 export function Top(){
     return (
         <div className="container">
-            <img width="150px" src="https://konfhub.com/img/logo.svg" alt="tpo"/>
+            <img className="Logo-org" src="https://konfhub.com/img/logo.svg" alt="tpo"/>
             <div className="container-desc">
                 <div className="head-desc">
                     <h2>Events</h2>
